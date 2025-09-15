@@ -57,9 +57,9 @@
             this.lblBemVindo.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lblBemVindo.Location = new System.Drawing.Point(48, 57);
             this.lblBemVindo.Name = "lblBemVindo";
-            this.lblBemVindo.Size = new System.Drawing.Size(155, 20);
+            this.lblBemVindo.Size = new System.Drawing.Size(83, 20);
             this.lblBemVindo.TabIndex = 4;
-            this.lblBemVindo.Text = "Bem vindo @usuário";
+            this.lblBemVindo.Text = "Bem vindo";
             // 
             // lblNomeExibicao
             // 
@@ -135,8 +135,7 @@
             this.Controls.Add(this.pcbHomeApp);
             this.Name = "InvenTrackHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InvenTrackForm";
-            this.Load += new System.EventHandler(this.InvenTrackForm_Load);
+            this.Text = "InvenTrackForm";            
             ((System.ComponentModel.ISupportInitialize)(this.pcbHomeApp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

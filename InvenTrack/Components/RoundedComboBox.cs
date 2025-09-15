@@ -25,6 +25,17 @@ public class RoundedComboBox : UserControl
 
     public ComboBox.ObjectCollection Items => comboBox.Items;
 
+    public override Color ForeColor
+    {
+        get => comboBox.ForeColor;
+        set
+        {
+            comboBox.ForeColor = value;
+            base.ForeColor = value;
+            comboBox.Refresh();
+        }
+    }
+
     public object SelectedItem
     {
         get => comboBox.SelectedItem;
@@ -35,6 +46,24 @@ public class RoundedComboBox : UserControl
     {
         get => comboBox.SelectedIndex;
         set => comboBox.SelectedIndex = value;
+    }
+
+    public string DisplayMember
+    {
+        get => comboBox.DisplayMember;
+        set => comboBox.DisplayMember = value;
+    }
+
+    public string ValueMember
+    {
+        get => comboBox.ValueMember;
+        set => comboBox.ValueMember = value;
+    }
+
+    public object DataSource
+    {
+        get => comboBox.DataSource;
+        set => comboBox.DataSource = value;
     }
 
     public string SelectedText => comboBox.Text;

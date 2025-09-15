@@ -21,15 +21,13 @@ public class RoundedMaskedTextBox : UserControl
 
         this.Controls.Add(maskedTextBox);
     }
-
-    // Propriedade para configurar a máscara
+    
     public string Mask
     {
         get => maskedTextBox.Mask;
         set => maskedTextBox.Mask = value;
     }
 
-    // Propriedade para acessar o texto formatado
     public string TextValue
     {
         get => maskedTextBox.Text;

@@ -13,6 +13,8 @@ namespace InvenTrack
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            UsuarioRepository.InicializarBanco();
+            CargoRepository.InicializarCargos();
             Application.Run(new Forms.InvenTrackLogin());
         }
     }

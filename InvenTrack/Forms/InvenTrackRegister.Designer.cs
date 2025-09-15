@@ -45,6 +45,8 @@ namespace InvenTrack.Forms
             this.lblEmail = new TransparentLabel();
             this.lblNomeCompleto = new TransparentLabel();
             this.lblCadastroApp = new TransparentLabel();
+            this.rtbSenha = new RoundedMaskedTextBox();
+            this.lblSenha = new TransparentLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCadastroApp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +77,7 @@ namespace InvenTrack.Forms
             this.rbtVoltar.TabIndex = 21;
             this.rbtVoltar.Text = "←";
             this.rbtVoltar.UseVisualStyleBackColor = false;
+            this.rbtVoltar.Click += new System.EventHandler(this.rbtVoltar_Click);
             // 
             // rbtCadastrar
             // 
@@ -86,7 +89,7 @@ namespace InvenTrack.Forms
             this.rbtCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.rbtCadastrar.ForeColor = System.Drawing.Color.White;
             this.rbtCadastrar.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(167)))), ((int)(((byte)(245)))));
-            this.rbtCadastrar.Location = new System.Drawing.Point(17, 388);
+            this.rbtCadastrar.Location = new System.Drawing.Point(20, 403);
             this.rbtCadastrar.Name = "rbtCadastrar";
             this.rbtCadastrar.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(167)))), ((int)(((byte)(245)))));
             this.rbtCadastrar.Size = new System.Drawing.Size(200, 30);
@@ -99,7 +102,7 @@ namespace InvenTrack.Forms
             // 
             this.rcbCargoAtual.BackColor = System.Drawing.Color.White;
             this.rcbCargoAtual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
-            this.rcbCargoAtual.Location = new System.Drawing.Point(17, 342);
+            this.rcbCargoAtual.Location = new System.Drawing.Point(17, 364);
             this.rcbCargoAtual.Name = "rcbCargoAtual";
             this.rcbCargoAtual.Padding = new System.Windows.Forms.Padding(5);
             this.rcbCargoAtual.SelectedIndex = -1;
@@ -112,7 +115,7 @@ namespace InvenTrack.Forms
             this.lblCargoAtual.AutoSize = true;
             this.lblCargoAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCargoAtual.ForeColor = System.Drawing.Color.White;
-            this.lblCargoAtual.Location = new System.Drawing.Point(17, 323);
+            this.lblCargoAtual.Location = new System.Drawing.Point(17, 345);
             this.lblCargoAtual.Name = "lblCargoAtual";
             this.lblCargoAtual.Size = new System.Drawing.Size(76, 16);
             this.lblCargoAtual.TabIndex = 18;
@@ -122,7 +125,7 @@ namespace InvenTrack.Forms
             // 
             this.rtxDataNascimento.BackColor = System.Drawing.Color.White;
             this.rtxDataNascimento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
-            this.rtxDataNascimento.Location = new System.Drawing.Point(130, 279);
+            this.rtxDataNascimento.Location = new System.Drawing.Point(130, 255);
             this.rtxDataNascimento.Mask = "00/00/0000";
             this.rtxDataNascimento.Name = "rtxDataNascimento";
             this.rtxDataNascimento.Padding = new System.Windows.Forms.Padding(10);
@@ -135,7 +138,7 @@ namespace InvenTrack.Forms
             this.lblDataNascimento.AutoSize = true;
             this.lblDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNascimento.ForeColor = System.Drawing.Color.White;
-            this.lblDataNascimento.Location = new System.Drawing.Point(134, 260);
+            this.lblDataNascimento.Location = new System.Drawing.Point(134, 236);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(79, 16);
             this.lblDataNascimento.TabIndex = 15;
@@ -145,7 +148,7 @@ namespace InvenTrack.Forms
             // 
             this.rtxCelular.BackColor = System.Drawing.Color.White;
             this.rtxCelular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
-            this.rtxCelular.Location = new System.Drawing.Point(17, 279);
+            this.rtxCelular.Location = new System.Drawing.Point(17, 255);
             this.rtxCelular.Mask = "(00) 00000-0000";
             this.rtxCelular.Name = "rtxCelular";
             this.rtxCelular.Padding = new System.Windows.Forms.Padding(10);
@@ -157,7 +160,7 @@ namespace InvenTrack.Forms
             // 
             this.rtxEmail.BackColor = System.Drawing.Color.White;
             this.rtxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
-            this.rtxEmail.Location = new System.Drawing.Point(17, 213);
+            this.rtxEmail.Location = new System.Drawing.Point(17, 199);
             this.rtxEmail.Mask = "";
             this.rtxEmail.Name = "rtxEmail";
             this.rtxEmail.Padding = new System.Windows.Forms.Padding(10);
@@ -170,7 +173,7 @@ namespace InvenTrack.Forms
             this.rtxNomeCompleto.BackColor = System.Drawing.Color.White;
             this.rtxNomeCompleto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
             this.rtxNomeCompleto.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rtxNomeCompleto.Location = new System.Drawing.Point(17, 152);
+            this.rtxNomeCompleto.Location = new System.Drawing.Point(17, 145);
             this.rtxNomeCompleto.Mask = "";
             this.rtxNomeCompleto.Name = "rtxNomeCompleto";
             this.rtxNomeCompleto.Padding = new System.Windows.Forms.Padding(10);
@@ -183,7 +186,7 @@ namespace InvenTrack.Forms
             this.lblCelular.AutoSize = true;
             this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCelular.ForeColor = System.Drawing.Color.White;
-            this.lblCelular.Location = new System.Drawing.Point(14, 260);
+            this.lblCelular.Location = new System.Drawing.Point(14, 236);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(49, 16);
             this.lblCelular.TabIndex = 11;
@@ -194,7 +197,7 @@ namespace InvenTrack.Forms
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(21, 194);
+            this.lblEmail.Location = new System.Drawing.Point(21, 180);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 9;
@@ -205,7 +208,7 @@ namespace InvenTrack.Forms
             this.lblNomeCompleto.AutoSize = true;
             this.lblNomeCompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeCompleto.ForeColor = System.Drawing.Color.White;
-            this.lblNomeCompleto.Location = new System.Drawing.Point(21, 131);
+            this.lblNomeCompleto.Location = new System.Drawing.Point(21, 124);
             this.lblNomeCompleto.Name = "lblNomeCompleto";
             this.lblNomeCompleto.Size = new System.Drawing.Size(103, 16);
             this.lblNomeCompleto.TabIndex = 7;
@@ -222,11 +225,36 @@ namespace InvenTrack.Forms
             this.lblCadastroApp.TabIndex = 1;
             this.lblCadastroApp.Text = "Cadastro App";
             // 
+            // rtbSenha
+            // 
+            this.rtbSenha.BackColor = System.Drawing.Color.White;
+            this.rtbSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
+            this.rtbSenha.Location = new System.Drawing.Point(15, 310);
+            this.rtbSenha.Mask = "";
+            this.rtbSenha.Name = "rtbSenha";
+            this.rtbSenha.Padding = new System.Windows.Forms.Padding(10);
+            this.rtbSenha.Size = new System.Drawing.Size(200, 30);
+            this.rtbSenha.TabIndex = 23;
+            this.rtbSenha.TextValue = "";
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.ForeColor = System.Drawing.Color.White;
+            this.lblSenha.Location = new System.Drawing.Point(19, 291);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(46, 16);
+            this.lblSenha.TabIndex = 22;
+            this.lblSenha.Text = "Senha";
+            // 
             // InvenTrackRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(232, 461);
+            this.Controls.Add(this.rtbSenha);
+            this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.rbtVoltar);
             this.Controls.Add(this.rbtCadastrar);
             this.Controls.Add(this.rcbCargoAtual);
@@ -245,6 +273,7 @@ namespace InvenTrack.Forms
             this.Name = "InvenTrackRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InvenTrackRegister";
+            this.Load += new System.EventHandler(this.InvenTrackRegister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCadastroApp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,5 +296,7 @@ namespace InvenTrack.Forms
         private RoundedComboBox rcbCargoAtual;
         private RoundedButton rbtCadastrar;
         private RoundedButton rbtVoltar;
+        private RoundedMaskedTextBox rtbSenha;
+        private TransparentLabel lblSenha;
     }
 }

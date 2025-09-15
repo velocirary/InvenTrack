@@ -34,11 +34,11 @@
             this.rbtLogin = new RoundedButton();
             this.lblForgotPassword = new TransparentLabel();
             this.lblPassword = new TransparentLabel();
-            this.lblUsername = new TransparentLabel();
+            this.lblEmail = new TransparentLabel();
             this.lblAppLogin = new TransparentLabel();
             this.lblBemVindoLogin = new TransparentLabel();
-            this.roundedMaskedTextBox1 = new RoundedMaskedTextBox();
-            this.roundedMaskedTextBox2 = new RoundedMaskedTextBox();
+            this.rtbEmailLogin = new RoundedMaskedTextBox();
+            this.rtbPasswordLogin = new RoundedMaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLoginApp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,7 @@
             this.rbtLogin.TabIndex = 4;
             this.rbtLogin.Text = "Login";
             this.rbtLogin.UseVisualStyleBackColor = false;
+            this.rbtLogin.Click += new System.EventHandler(this.rbtLogin_Click);
             // 
             // lblForgotPassword
             // 
@@ -104,15 +105,15 @@
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password";
             // 
-            // lblUsername
+            // lblEmail
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(24, 213);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(55, 13);
-            this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "Username";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(24, 213);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 1;
+            this.lblEmail.Text = "E-mail";
             // 
             // lblAppLogin
             // 
@@ -138,45 +139,45 @@
             this.lblBemVindoLogin.TabIndex = 7;
             this.lblBemVindoLogin.Text = "Bem-vindo!";
             // 
-            // roundedMaskedTextBox1
+            // rtbEmailLogin
             // 
-            this.roundedMaskedTextBox1.BackColor = System.Drawing.Color.White;
-            this.roundedMaskedTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
-            this.roundedMaskedTextBox1.Location = new System.Drawing.Point(25, 231);
-            this.roundedMaskedTextBox1.Mask = "";
-            this.roundedMaskedTextBox1.Name = "roundedMaskedTextBox1";
-            this.roundedMaskedTextBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedMaskedTextBox1.Size = new System.Drawing.Size(187, 30);
-            this.roundedMaskedTextBox1.TabIndex = 8;
-            this.roundedMaskedTextBox1.TextValue = "";
+            this.rtbEmailLogin.BackColor = System.Drawing.Color.White;
+            this.rtbEmailLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
+            this.rtbEmailLogin.Location = new System.Drawing.Point(25, 231);
+            this.rtbEmailLogin.Mask = "";
+            this.rtbEmailLogin.Name = "rtbEmailLogin";
+            this.rtbEmailLogin.Padding = new System.Windows.Forms.Padding(10);
+            this.rtbEmailLogin.Size = new System.Drawing.Size(187, 30);
+            this.rtbEmailLogin.TabIndex = 8;
+            this.rtbEmailLogin.TextValue = "";
             // 
-            // roundedMaskedTextBox2
+            // rtbPasswordLogin
             // 
-            this.roundedMaskedTextBox2.BackColor = System.Drawing.Color.White;
-            this.roundedMaskedTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
-            this.roundedMaskedTextBox2.Location = new System.Drawing.Point(26, 285);
-            this.roundedMaskedTextBox2.Mask = "";
-            this.roundedMaskedTextBox2.Name = "roundedMaskedTextBox2";
-            this.roundedMaskedTextBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedMaskedTextBox2.Size = new System.Drawing.Size(187, 30);
-            this.roundedMaskedTextBox2.TabIndex = 9;
-            this.roundedMaskedTextBox2.TextValue = "";
+            this.rtbPasswordLogin.BackColor = System.Drawing.Color.White;
+            this.rtbPasswordLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(157)))), ((int)(((byte)(237)))));
+            this.rtbPasswordLogin.Location = new System.Drawing.Point(26, 285);
+            this.rtbPasswordLogin.Mask = "";
+            this.rtbPasswordLogin.Name = "rtbPasswordLogin";
+            this.rtbPasswordLogin.Padding = new System.Windows.Forms.Padding(10);
+            this.rtbPasswordLogin.Size = new System.Drawing.Size(187, 30);
+            this.rtbPasswordLogin.TabIndex = 9;
+            this.rtbPasswordLogin.TextValue = "";
             // 
             // InvenTrackLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(231, 421);
-            this.Controls.Add(this.roundedMaskedTextBox2);
-            this.Controls.Add(this.roundedMaskedTextBox1);
+            this.ClientSize = new System.Drawing.Size(239, 426);
+            this.Controls.Add(this.rtbPasswordLogin);
+            this.Controls.Add(this.rtbEmailLogin);
             this.Controls.Add(this.lblBemVindoLogin);
             this.Controls.Add(this.lblAppLogin);
             this.Controls.Add(this.lblDontHaveAccount);
             this.Controls.Add(this.rbtLogin);
             this.Controls.Add(this.lblForgotPassword);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.pcbLoginApp);
             this.MaximizeBox = false;
             this.Name = "InvenTrackLogin";
@@ -191,14 +192,14 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pcbLoginApp;
-        private TransparentLabel lblUsername;
+        private TransparentLabel lblEmail;
         private TransparentLabel lblPassword;
         private TransparentLabel lblForgotPassword;
         private RoundedButton rbtLogin;
         private TransparentLabel lblDontHaveAccount;
         private TransparentLabel lblAppLogin;
         private TransparentLabel lblBemVindoLogin;
-        private RoundedMaskedTextBox roundedMaskedTextBox1;
-        private RoundedMaskedTextBox roundedMaskedTextBox2;
+        private RoundedMaskedTextBox rtbEmailLogin;
+        private RoundedMaskedTextBox rtbPasswordLogin;
     }
 }
