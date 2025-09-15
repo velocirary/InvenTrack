@@ -25,14 +25,14 @@ O InvenTrack foi desenvolvido para facilitar o controle e registro de itens em a
 
 ### 1. Requisitos
 
-- Visual Studio 2019 ou superior  
+- Visual Studio 2019 ou superior
 - .NET Framework 4.8.1 instalado  
 - Sistema operacional Windows
 
 ### 2. Clonando o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/InvenTrack.git
+git clone https://github.com/velocirary/InvenTrack.git
 cd InvenTrack
 ```
 
