@@ -36,6 +36,7 @@
             this.lblCodigoCadastro = new TransparentLabel();
             this.lblLocalizacao = new TransparentLabel();
             this.pcbHomeApp = new System.Windows.Forms.PictureBox();
+            this.voltar = new RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pcbHomeApp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,6 +120,24 @@
             this.pcbHomeApp.TabIndex = 0;
             this.pcbHomeApp.TabStop = false;
             // 
+            // voltar
+            // 
+            this.voltar.BackColor = System.Drawing.Color.White;
+            this.voltar.BackgroundColor = System.Drawing.Color.White;
+            this.voltar.BorderRadius = 15;
+            this.voltar.FlatAppearance.BorderSize = 0;
+            this.voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.voltar.ForeColor = System.Drawing.Color.Black;
+            this.voltar.HoverColor = System.Drawing.Color.LightGray;
+            this.voltar.Location = new System.Drawing.Point(502, 217);
+            this.voltar.Name = "voltar";
+            this.voltar.PressedColor = System.Drawing.Color.Gainsboro;
+            this.voltar.Size = new System.Drawing.Size(120, 30);
+            this.voltar.TabIndex = 9;
+            this.voltar.Text = "Voltar";
+            this.voltar.UseVisualStyleBackColor = false;
+            this.voltar.Click += new System.EventHandler(this.voltar_Click);
+            // 
             // InvenTrackHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +145,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(831, 508);
             this.ControlBox = false;
+            this.Controls.Add(this.voltar);
             this.Controls.Add(this.lblLocalizacao);
             this.Controls.Add(this.lblCodigoCadastro);
             this.Controls.Add(this.lblValorUsuario);
@@ -135,7 +155,7 @@
             this.Controls.Add(this.pcbHomeApp);
             this.Name = "InvenTrackHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InvenTrackForm";            
+            this.Text = "InvenTrackForm";
             ((System.ComponentModel.ISupportInitialize)(this.pcbHomeApp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,6 +171,7 @@
         private TransparentLabel lblValorUsuario;
         private TransparentLabel lblCodigoCadastro;
         private TransparentLabel lblLocalizacao;
+        private RoundedButton voltar;
     }
 }
 

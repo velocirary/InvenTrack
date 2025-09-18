@@ -68,7 +68,7 @@ namespace InvenTrack.Entities
 
         private void ValidarCelular()
         {
-            if (string.IsNullOrWhiteSpace(Celular) || !Regex.IsMatch(Celular, @"^\+?\d{10,15}$"))
+            if (string.IsNullOrWhiteSpace(Celular))
                 throw new ArgumentException("O campo Celular deve conter um número válido (ex.: +559899999999).");
         }
     }

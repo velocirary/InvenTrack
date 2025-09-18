@@ -41,7 +41,21 @@ namespace InvenTrack.Forms
                     dataNascimento: dataNascimento,
                     cargoAtual: cargoSelecionado,
                     senhaHash: senhaHash
-                );                
+                );
+
+                var usuarioRepo = new UsuarioRepository();
+                usuarioRepo.Inserir(novoUsuario);
+
+                if (usuarioRepo is null)
+                {
+                    MessageBox.Show("Falha ao realizar cadastro.", "Falha no cadastro", 
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var home = new InvenTrackHome(novoUsuario);
+                home.Show();
+                Hide();
             }
             catch (Exception ex)
             {

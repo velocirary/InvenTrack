@@ -1,6 +1,4 @@
-﻿using InvenTrack.Entities;
-using InvenTrack.Helpers;
-using LiteDB;
+﻿using InvenTrack.Helpers;
 using System;
 using System.Windows.Forms;
 
@@ -15,7 +13,17 @@ namespace InvenTrack.Forms
 
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
-           MessageBox.Show("Não implementado");
+            try
+            {
+                // TODO: Implementar lógica para abrir a tela de recuperação de senha
+                // var forgotPasswordForm = new InvenTrackForgotPassword();
+                // forgotPasswordForm.Show();
+                // Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao abrir tela de registro. Detalhes: {ex.Message}");
+            }
         }
 
         private void lblDontHaveAccount_Click(object sender, EventArgs e)

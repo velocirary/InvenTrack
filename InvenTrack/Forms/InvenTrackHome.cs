@@ -27,5 +27,19 @@ namespace InvenTrack.Forms
                 MessageBox.Show($"Erro ao carregar formulário. Detalhes: {ex.Message}");
             }
         }
+
+        private void voltar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var loginForm = new InvenTrackLogin();
+                loginForm.Show();
+                Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao abrir tela de login. Detalhes: {ex.Message}");
+            }
+        }
     }
 }
