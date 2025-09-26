@@ -15,10 +15,9 @@ namespace InvenTrack.Forms
         {
             try
             {
-                // TODO: Implementar lógica para abrir a tela de recuperação de senha
-                // var forgotPasswordForm = new InvenTrackForgotPassword();
-                // forgotPasswordForm.Show();
-                // Hide();
+                InvenTrackForgotPassword forgotPasswordForm = new InvenTrackForgotPassword();
+                forgotPasswordForm.Show();
+                Hide();
             }
             catch (Exception ex)
             {
@@ -30,7 +29,7 @@ namespace InvenTrack.Forms
         {
             try
             {
-                var registerForm = new InvenTrackRegister();
+                InvenTrackRegister registerForm = new InvenTrackRegister();
                 registerForm.Show();
                 Hide();
             }
@@ -49,7 +48,7 @@ namespace InvenTrack.Forms
 
                 rbtLogin.Enabled = false;
 
-                var usuarioRepo = new UsuarioRepository();
+                UsuarioRepository usuarioRepo = new UsuarioRepository();
                 var usuarioLogado = usuarioRepo.BuscarUsuarioLogin(email, senhaHash);
 
                 if (usuarioLogado is null)
@@ -60,7 +59,7 @@ namespace InvenTrack.Forms
 
                 MessageBox.Show($"Bem-vindo, {usuarioLogado.NomeCompleto}!", "Login realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                var home = new InvenTrackHome(usuarioLogado);
+                InvenTrackHome home = new InvenTrackHome(usuarioLogado);
                 home.Show();
                 Hide();
             }

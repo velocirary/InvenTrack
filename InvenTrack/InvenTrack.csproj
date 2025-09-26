@@ -37,6 +37,9 @@
     <Reference Include="LiteDB">
       <HintPath>..\packages\LiteDB.5.0.21\lib\net45\LiteDB.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -62,8 +65,16 @@
     <Compile Include="Components\RoundedTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Configuration\Config.cs" />
     <Compile Include="Entities\Cargo.cs" />
+    <Compile Include="Entities\RecuperacaoSenha.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Forms\InvenTrackForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InvenTrackForgotPassword.Designer.cs">
+      <DependentUpon>InvenTrackForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InvenTrackHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,7 +102,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Repositories\CargoRepository.cs" />
+    <Compile Include="Repositories\RecuperacaoSenhaRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
+    <Compile Include="Services\RecuperacaoSenhaService.cs" />
+    <EmbeddedResource Include="Forms\InvenTrackForgotPassword.resx">
+      <DependentUpon>InvenTrackForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InvenTrackRegister.resx">
       <DependentUpon>InvenTrackRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +122,9 @@
     <EmbeddedResource Include="Forms\InvenTrackLogin.resx">
       <DependentUpon>InvenTrackLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

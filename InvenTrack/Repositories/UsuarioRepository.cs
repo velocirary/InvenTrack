@@ -39,7 +39,7 @@ public class UsuarioRepository : IUsuarioRepository
 
     public Usuario BuscarUsuarioLogin(string email, string senhaHash)
     {
-        using var dbLite = new LiteDatabase(DatabasePath);
+        using LiteDatabase dbLite = new LiteDatabase(DatabasePath);
         var usuarios = dbLite.GetCollection<Usuario>(ColecaoUsuarios);
 
         return usuarios.FindOne(u => u.Email == email && u.SenhaHash == senhaHash);
@@ -47,20 +47,39 @@ public class UsuarioRepository : IUsuarioRepository
 
     public void Inserir(Usuario usuario)
     {
-        using var dbLite = new LiteDatabase(DatabasePath);
+        using LiteDatabase dbLite = new LiteDatabase(DatabasePath);
         var colecao = dbLite.GetCollection<Usuario>(ColecaoUsuarios);
         colecao.Insert(usuario);
     }
 
     public List<Usuario> ListarTodos()
     {
-        using var dbLite = new LiteDatabase(DatabasePath);
+        using LiteDatabase dbLite = new LiteDatabase(DatabasePath);
         var colecao = dbLite.GetCollection<Usuario>(ColecaoUsuarios);
         return colecao.FindAll().ToList();
     }
 
     public bool UsuarioExiste(string email)
     {
-        throw new NotImplementedException();
+        using LiteDatabase dbLite = new LiteDatabase(DatabasePath);
+        var colecao = dbLite.GetCollection<Usuario>(ColecaoUsuarios);
+
+        colecao.FindOne(u => u.Email == email);
+
+        var usuario = colecao.FindOne(u => u.Email == email);
+        return colecao.Exists(u => u.Email == email);
+    }
+
+    public bool AtualizarSenha(string email, string novaSenhaHash)
+    {
+        using LiteDatabase dbLite = new LiteDatabase(DatabasePath);
+        var colecao = dbLite.GetCollection<Usuario>(ColecaoUsuarios);
+
+        var usuario = colecao.FindOne(u => u.Email == email);
+        if (usuario == null)
+            return false;
+
+        usuario.SenhaHash = novaSenhaHash;
+        return colecao.Update(usuario);
     }
 }

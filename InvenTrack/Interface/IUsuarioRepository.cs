@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using InvenTrack.Entities;
 
 public interface IUsuarioRepository
@@ -7,5 +6,6 @@ public interface IUsuarioRepository
     void Inserir(Usuario usuario);
     List<Usuario> ListarTodos();
     Usuario BuscarUsuarioLogin(string email, string senhaHash);
-    bool UsuarioExiste(string email);    
+    bool UsuarioExiste(string email);
+    bool AtualizarSenha(string email, string novaSenhaHash);
 }
